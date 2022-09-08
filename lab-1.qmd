@@ -1,6 +1,6 @@
 ---
 title: "Lab 1 - Data visualization"
-author: "[INSERT NAME]"
+author: "Robertson Waweru"
 format: pdf
 editor: visual
 ---
@@ -12,6 +12,7 @@ editor: visual
 #| message: false
 
 library(tidyverse)
+library(viridis)
 ```
 
 ## Exercise 1
@@ -28,11 +29,8 @@ library(tidyverse)
 
 ## Exercise 4
 
-
 ## Exercise 5
 
-
 ## Exercise 6
-
 
 ## Exercise 7
