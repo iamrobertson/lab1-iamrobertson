@@ -3,6 +3,8 @@ title: "Lab 1 - Data visualization"
 author: "Robertson Waweru"
 format: pdf
 editor: visual
+editor_options: 
+  chunk_output_type: console
 ---
 
 ## Load Packages
@@ -17,17 +19,61 @@ library(viridis)
 
 ## Exercise 1
 
-(Type your answer to Exercise 1 here. Add code chunks as needed. Don't forget to label your code chunk. Do not use spaces in code chunk labels.)
+```{r}
+#| label: Exercise-1-histogram
+
+ggplot(midwest,
+       aes(x = popdensity)) +
+  geom_histogram(binwidth = 10000) +
+  labs(
+    x = "Population Density",
+    y = "Frequency",
+    title = "Population Density of Counties"
+  )
+```
+
+Describe the shape of the distribution.
+Does there appear to be are any outliers? Briefly explain
 
 ## Exercise 2
 
-(Type your answer to Exercise 2 here. Add code chunks as needed. Don't forget to label your code chunk. Do not use spaces in code chunk labels.)
+```{r}
+#| label: Exercise-2-scatterplot
+
+ggplot(midwest,
+       aes(x = percollege, y = percbelowpoverty, color = state)) +
+  geom_point() +
+  labs(
+    x = "Percentage of people with a college degree",
+    y = "Percentage of people below poverty line",
+    title = "Percentage of people with a college degree vs those below poverty line",
+    color = "State"
+  ) +
+  scale_color_viridis_d()
+```
 
 ## Exercise 3
 
-(Type your answer to Exercise 3 here. Add code chunks as needed. Don't forget to label your code chunk. Do not use spaces in code chunk labels.)
+Describe what you observe in the plot from the previous exercise. In your description, include similarities and differences in the patterns across states.
 
 ## Exercise 4
+
+```{r}
+#| label: Exercise-4-curve
+
+ggplot(midwest,
+       aes(x = percollege, y = percbelowpoverty, color = state)) +
+  geom_smooth(se = FALSE) +
+  facet_wrap(~ state) +
+  labs(
+    x = "Percentage of people with a college degree",
+    y = "Percentage of people below poverty line",
+    title = "Percentage of people with a college degree vs those below poverty line",
+    color = "State"
+  ) +
+  scale_color_viridis_d()
+```
+
 
 ## Exercise 5
 
