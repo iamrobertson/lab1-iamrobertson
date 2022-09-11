@@ -88,7 +88,7 @@ ggplot(midwest,
   labs(
     x = "State",
     y = "Area",
-    title = "State vs Area",
+    title = "Boxplot showing State vs Area",
     fill = "State"
   ) 
 
